@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jakarta.ee/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Gerenciar Equipamentos</title>
+</h:head>
+<h:body>
+    <h:form id="equipamentosForm">
+        <p:dataTable value="#{equipamentoBean.listaEquipamentos}" var="equip">
+            <p:column headerText="ID">#{equip.id}</p:column>
+            <p:column headerText="Nome">#{equip.nome}</p:column>
+            <p:column headerText="Descrição">#{equip.descricao}</p:column>
+            <p:column headerText="Data de Aquisição">#{equip.dataAquisicao}</p:column>
+            <p:column headerText="Valor">#{equip.valor}</p:column>
+            <p:column headerText="Validade">#{equip.validade}</p:column>
+        </p:dataTable>
+
+        <p:button value="Adicionar Equipamento" outcome="adicionarEquipamento.xhtml" />
+    </h:form>
+</h:body>
+</html>

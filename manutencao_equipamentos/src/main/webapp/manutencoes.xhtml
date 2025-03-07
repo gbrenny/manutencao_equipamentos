@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jakarta.ee/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Gerenciar Manutenções</title>
+</h:head>
+<h:body>
+    <h:form id="manutencoesForm">
+        <p:dataTable value="#{manutencaoBean.listaManutencoes}" var="manut">
+            <p:column headerText="ID">#{manut.id}</p:column>
+            <p:column headerText="Equipamento ID">#{manut.equipamentoId}</p:column>
+            <p:column headerText="Data da Manutenção">#{manut.dataManutencao}</p:column>
+            <p:column headerText="Descrição">#{manut.descricao}</p:column>
+        </p:dataTable>
+
+        <p:button value="Adicionar Manutenção" outcome="adicionarManutencao.xhtml" />
+    </h:form>
+</h:body>
+</html>

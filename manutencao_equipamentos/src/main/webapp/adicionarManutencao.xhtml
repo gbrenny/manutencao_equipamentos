@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jakarta.ee/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Adicionar Manutenção</title>
+</h:head>
+<h:body>
+    <h:form id="form">
+        <p:panel header="Nova Manutenção">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Equipamento ID:" />
+                <p:inputText value="#{manutencaoBean.manutencao.equipamentoId}" required="true" />
+
+                <h:outputLabel value="Data da Manutenção:" />
+                <p:calendar value="#{manutencaoBean.manutencao.dataManutencao}" pattern="yyyy-MM-dd" required="true" />
+
+                <h:outputLabel value="Descrição:" />
+                <p:inputTextarea value="#{manutencaoBean.manutencao.descricao}" required="true" />
+            </h:panelGrid>
+
+            <p:commandButton value="Salvar" action="#{manutencaoBean.adicionarManutencao}" update="form" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>

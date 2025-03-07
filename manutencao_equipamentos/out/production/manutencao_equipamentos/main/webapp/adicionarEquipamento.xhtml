@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Adicionar Equipamento</title>
+</h:head>
+<h:body>
+    <h:form id="form">
+        <p:panel header="Novo Equipamento">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome:" />
+                <p:inputText value="#{equipamentoBean.equipamento.nome}" required="true" />
+
+                <h:outputLabel value="Descrição:" />
+                <p:inputTextarea value="#{equipamentoBean.equipamento.descricao}" />
+
+                <h:outputLabel value="Data de Aquisição:" />
+                <p:calendar value="#{equipamentoBean.equipamento.dataAquisicao}" pattern="yyyy-MM-dd" />
+
+                <h:outputLabel value="Valor:" />
+                <p:inputText value="#{equipamentoBean.equipamento.valor}" />
+
+                <h:outputLabel value="Validade:" />
+                <p:calendar value="#{equipamentoBean.equipamento.validade}" pattern="yyyy-MM-dd" />
+            </h:panelGrid>
+
+            <p:commandButton value="Salvar" action="#{equipamentoBean.adicionarEquipamento}" update="form" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
